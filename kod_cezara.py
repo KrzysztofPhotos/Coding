@@ -36,7 +36,8 @@ def rezultat():
 
         wynik2 = wynik2 + str(i)
 
-    print(wynik2)
+    print("\nWynik: ")
+    print(wynik2,"\n")
 
 
 while True:
