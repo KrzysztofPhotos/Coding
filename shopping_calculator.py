@@ -22,9 +22,12 @@ def add():
     print("Your product named", product, "was added to list.")
 
 def show():
-    print("\n[Your actual shopping list:")
-    for i  in shop_list:
-        print("[Product", i, "for price: $", shop_list[i])
+    if len(shop_list) == 0:
+        print("\n[ Your actual shopping list is blank.")
+    else:
+        print("\n[ Your actual shopping list:")
+        for i  in shop_list:
+            print("[ Product", i, "for price: $", shop_list[i])
 
 def delete():
     to_del = input("Enter the name of the product you want to delete: ")
@@ -36,6 +39,20 @@ def delete():
     else:
         print("You entered a bad name of product.\nTry again.")
 
+def finish():
+    ask = input("Are you sure to save and exit the shopping list? Y/N ")
+    ask = ask.strip()
+    ask = ask.upper()
+    if str(ask) == "Y":
+        print("\n[ Your final shopping list:")
+        final_price = 0
+        for i in shop_list:
+            print("[ Product", i, "for price: $", shop_list[i])
+            final_price = final_price + float(shop_list[i])
+
+        len_dic = len(shop_list)
+
+        print("[\n[ Summary:\n[ Products ->",len_dic,"\n[ Final amount:", final_price)
 
 while True:
     x = input("-> ")
@@ -53,8 +70,8 @@ while True:
         # show all shopping list
         show()
     elif str(x) == "F":
-        # zakoncz liste zakupową
-        add()
+        # finish and save the shopping list
+        finish()
     elif str(x) == "HELP":
         help_request()
     else:
