@@ -17,7 +17,7 @@ shop_list = dict()
 
 def add():
     product = str(input("Please type a name of the product / service: "))
-    amount = float(input("Please type amount: "))
+    amount = float(input("Please type price: "))
     product = product.strip()
     product = product.upper()
     shop_list[product] = amount
@@ -61,10 +61,18 @@ def finish():
         to_file = to_file.upper()
         if str(to_file) == "Y":
             now = datetime.now()
-            name_of_the_file = "results " + str(now) + str(".txt")
-            print(name_of_the_file) # tymczasowe
-            f = open(str(name_of_the_file),"x")
-            f.write("Hello there")
+            date = now.strftime("%d/%m/%Y %H:%M:%S")
+            f = open("result.txt","x")
+            f.write("Your shopping list from "+date+"\n")
+            f.write("Amount of the products: " + str(len_dic))
+            f.write("\nThe price of all the items: $" + str(final_price))
+            f.write("---------------------------------------------------")
+            f.write("\n\nThe list of products: \n")
+            val = 1
+            for i in shop_list:
+                f.write(str(val) + ". Product " + str(i) + " costs $" + str(shop_list[i])+"\n")
+                val += 1
+            f.write("---------------------------------------------------")
             f.close()
         else:
             sys.exit("End of program without saving results")
@@ -91,3 +99,7 @@ while True:
         help_request()
     else:
         print("Unknown command. Check the HELP")
+
+# TO DO
+# change the filename to current date
+#

@@ -1,0 +1,8 @@
+Your shopping list from 04/12/2022 17:43:21
+Amount of the products: 4The price of all the items: $75.0
+
+The list of products: 1. Product KURWA costs $4.0
+2. Product WLASNIE costs $6.0
+3. Product TYLKO costs $32.0
+4. Product WTF costs $33.0
+---------------------------------------
