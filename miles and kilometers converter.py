@@ -1,13 +1,16 @@
 
 mile = 0.621371192
+kilometer = 1.609344
 
 var = int(input("[Convert\n[Miles to kilometers -> 1\n[Kilometers to miles -> 2\n"))
+var2 = float(input("Type here a value to convert: "))
 
 def mi_to_km():
-    print('chuj')
+    print(var2 * kilometer)
+
 
 def km_to_mi():
-    print('chujxd')
+    print(var2 * mile)
 
 if var == 1:
     # mi to km
