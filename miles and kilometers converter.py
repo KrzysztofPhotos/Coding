@@ -6,11 +6,12 @@ var = int(input("[Convert\n[Miles to kilometers -> 1\n[Kilometers to miles -> 2\
 var2 = float(input("Type here a value to convert: "))
 
 def mi_to_km():
-    print(var2 * kilometer)
-
+    result = round(var2 * kilometer, 2)
+    print(var2, "miles is equal to ", result, "kilometers.")
 
 def km_to_mi():
-    print(var2 * mile)
+    result = round(var2 * mile, 2)
+    print(var2, " kilometers is equal to ",  result, "miles.")
 
 if var == 1:
     # mi to km
