@@ -10,17 +10,38 @@ def help_request():
 
 print("@-@-@   Welcome to shopping list calculator!   @-@-@\nIf you have any problems please try to solve problem by typing HELP")
 
+#define a empty dict
+
+shop_list = dict()
+
+def add():
+    product = str(input("Please type a name of the product / service: "))
+    amount = float(input("Please type amount"))
+    shop_list[product] = amount
+    print("Your product named", product, "was added to list.")
+
+
+
+
 while True:
-    x = input("")
+    x = input("-> ")
     x = x.strip()
     x = x.upper()
 
 
     if str(x) == "+":
-        # dodaj nowy element do dict
+        # add a new element to dict
+        add()
     elif str(x) == "-":
-        # usun element z listy
+        # remove a element from dict
+        add()
     elif str(x) == "S":
-        # pokaż całą dotychczasową liste
+        # show all shopping list
+        add()
     elif str(x) == "F":
         # zakoncz liste zakupową
+        add()
+    elif str(x) == "HELP":
+        help_request()
+    else:
+        print("Unknown command. Check the HELP")
