@@ -66,14 +66,15 @@ def finish():
             f.write("Your shopping list from "+date+"\n")
             f.write("Amount of the products: " + str(len_dic))
             f.write("\nThe price of all the items: $" + str(final_price))
-            f.write("---------------------------------------------------")
-            f.write("\n\nThe list of products: \n")
+            f.write("\n\n---------------------------------------------------")
+            f.write("\nThe list of products: \n\n")
             val = 1
             for i in shop_list:
                 f.write(str(val) + ". Product " + str(i) + " costs $" + str(shop_list[i])+"\n")
                 val += 1
             f.write("---------------------------------------------------")
             f.close()
+            sys.exit("End of program with saved results to file")
         else:
             sys.exit("End of program without saving results")
 
