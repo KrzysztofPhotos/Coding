@@ -1,3 +1,5 @@
+import sys
+from datetime import datetime
 
 # użytkownik wpisuje wartości
 # na samym początku podajemy nasz budżet
@@ -53,6 +55,16 @@ def finish():
         len_dic = len(shop_list)
 
         print("[\n[ Summary:\n[ Products ->",len_dic,"\n[ Final amount:", final_price)
+
+        to_file = input("\nDo you want to save list as file? Y/N")
+        to_file = to_file.strip()
+        to_file = to_file.upper()
+        if str(to_file) == "Y":
+            f = open("results.txt","x")
+            f.write("Hello there")
+            f.close()
+        else:
+            sys.exit("End of program without saving results")
 
 while True:
     x = input("-> ")
