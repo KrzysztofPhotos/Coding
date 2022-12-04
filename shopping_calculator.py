@@ -60,7 +60,10 @@ def finish():
         to_file = to_file.strip()
         to_file = to_file.upper()
         if str(to_file) == "Y":
-            f = open("results.txt","x")
+            now = datetime.now()
+            name_of_the_file = "results " + str(now) + str(".txt")
+            print(name_of_the_file) # tymczasowe
+            f = open(str(name_of_the_file),"x")
             f.write("Hello there")
             f.close()
         else:
