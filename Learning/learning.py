@@ -29,7 +29,7 @@ def words_length_dict():
     return result_dict
 
 def car_1():
-    thisdict = {
+    car = {
         'brand': 'Ford',
         'Model': 'Mustang',
         'year': 1964,
@@ -38,8 +38,6 @@ def car_1():
         'km': 89000,
         'motor': 1.6
     }
-def car_2():
 
-def car_3():
 
-def car_4():
+# QUESTION 4 FROM QUIZ_DICTIONARY
