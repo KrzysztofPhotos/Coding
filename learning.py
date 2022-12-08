@@ -40,3 +40,59 @@ def count_letters(text):
 
 text = 'example text.'
 print(count_letters(text))
+
+#
+# def count_letters_2(text):
+#
+#     letters = dict()
+#     for letter in text:
+#         if letter.isalpha():
+
+def reverse_lookup(dictionary, value):
+
+    # loop over the dictionary
+    for key in dictionary:
+
+        # check if the value with this key == value
+        if dictionary[key] == value:
+            # we found the key
+            return key
+    else:
+        # raise error
+        raise KeyError('We could not find with this value: ',value)
+
+dictionary = {
+    'a': 2,
+    'b': 1,
+    'c': 4,
+    'd': 3,
+    'e': 2
+}
+
+print(dictionary)
+
+value = 2
+print(reverse_lookup(dictionary, value))
+
+value = 122
+print(reverse_lookup(dictionary, value))
+
+# LIST CAN BE USED AS VALUES IN DICTIONARIES
+
+def list_of_letters(text):
+    # get the dictionary of occurences
+    dictionary = count_letters(text)
+
+    letters = {}
+
+    for key in dictionary:
+
+        # get value
+        value = dictionary[key]
+
+        # if this value is in keys -> add it and assing a list of key
+        if value not in letters:
+            letters[value] = [key]
+        else:
+            # this value is in letters keys
+            letters[keys].append(key)
