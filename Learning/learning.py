@@ -100,3 +100,10 @@ def list_of_letters(text):
 
 text = 'example text!'
 print(list_of_letters(text))
+
+
+def words_dict():
+    file = open('en_words.txt')
+    for elements in file:
+        print(elements)
+
