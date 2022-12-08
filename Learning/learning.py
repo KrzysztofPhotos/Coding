@@ -95,4 +95,8 @@ def list_of_letters(text):
             letters[value] = [key]
         else:
             # this value is in letters keys
-            letters[keys].append(key)
+            letters[value].append(key)
+    return letters
+
+text = 'example text!'
+print(list_of_letters(text))
