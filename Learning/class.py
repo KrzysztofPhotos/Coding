@@ -1,14 +1,16 @@
 # print("Hi")
 
 class Human:
+    def __init__(self):
+
     imie = "Sebastian"
 
-    def presentYourself(self):
-        return "Hi my name is " + self.imie
+    def presentYourself(self, powitanie = "Hi"):
+        return powitanie + " my name is " + self.imie
 
 obiekt = Human()
 print(obiekt.imie)
-print(obiekt.presentYourself())
+print(obiekt.presentYourself("Witam"))
 
 obiekt2 = Human()
 obiekt2.imie = "Adrian"
