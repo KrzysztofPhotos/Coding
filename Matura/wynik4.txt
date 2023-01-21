@@ -1,0 +1,3 @@
+Na krawedziach: 2
+Poza kwadratem: 749
+W srodku kwadratu: 249
