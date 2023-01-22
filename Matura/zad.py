@@ -10,6 +10,9 @@ def isprime(number):
             return False
         return True
 
+# def cyfropodobne(x, y):
+
+
 count = 0
 srodek = 0
 zewnatrz = 0
