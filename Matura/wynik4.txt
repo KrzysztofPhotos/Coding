@@ -1,3 +1,7 @@
+4.1
+Obie wspolrzedne sa liczbami pierwszymi: 260
+
+4.4
 Na krawedziach: 2
 Poza kwadratem: 749
 W srodku kwadratu: 249

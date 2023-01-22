@@ -1,10 +1,20 @@
 file = open("punkty.txt", 'r')
 Lines = file.readlines()
 
+def isprime(number):
+    if number < 2:
+        return False
+    i = 2
+    while i <= number:
+        if number % i == 0:
+            return False
+        return True
+
 count = 0
 srodek = 0
 zewnatrz = 0
 krawedz = 0
+obapierwsze = 0
 
 for line in Lines:
     count += 1
@@ -30,14 +40,17 @@ for line in Lines:
     else:
         zewnatrz += 1
 
+    if isprime(int(x)) and isprime(int(y)):
+        obapierwsze += 1
 
-print(srodek)
-print(krawedz)
-print(zewnatrz)
+
+
 
 
 f = open('wynik4.txt', 'w')
-f.write("Na krawedziach: " + str(krawedz))
+f.write('4.1\nObie wspolrzedne sa liczbami pierwszymi: ' + str(obapierwsze))
+f.write("\n\n4.4")
+f.write("\nNa krawedziach: " + str(krawedz))
 f.write("\nPoza kwadratem: " + str(zewnatrz))
 f.write("\nW srodku kwadratu: " + str(srodek))
 f.close()
