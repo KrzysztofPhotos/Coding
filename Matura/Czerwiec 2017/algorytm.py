@@ -8,14 +8,27 @@ def isprime(num):
         return True
 
 
-def cyfropodobne(tab):
-    d = 0
-    while d < len(tab) - 1:
-        if tab[d] == tab[d + 1]:
-            tab.pop(d)
+def usunduplikaty(tab):
+    tab.sort()
+    i = 0
+    dlugosc = len(tab)
+    while i < dlugosc - 1:
+        if tab[i] == tab[i + 1]:
+            tab.pop(i)
+            dlugosc = - 1
         else:
-            d += 1
+            i += 1
     return tab
+
+
+def porownaj(tab1, tab2):
+    if len(tab1) == len(tab2):
+        for ie in range(len(tab1)):
+            if tab1[ie] != tab2[ie]:
+                return False
+        return True
+    else:
+        return False
 
 
 file = open("punkty.txt", 'r')
@@ -57,7 +70,6 @@ for line in Lines:
         wewnatrz += 1
     else:
         zewnatrz += 1
-
 
 print('obie liczby sa pierwsze: ' + str(obieliczbypierwsze))
 print('na zewnatrz ' + str(zewnatrz))
