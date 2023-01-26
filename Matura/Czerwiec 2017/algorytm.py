@@ -38,7 +38,7 @@ obieliczbypierwsze = 0
 krawedz = 0
 wewnatrz = 0
 zewnatrz = 0
-
+similarnum = 0
 count = 0
 for line in Lines:
     count += 1
@@ -57,9 +57,16 @@ for line in Lines:
     for i in x:
         lista_x.append(i)
     lista_x.sort()
-    print(lista_x)
 
-    len_x = len(lista_x)
+    lista_y = []
+    for i in x:
+        lista_y.append(i)
+    lista_y.sort()
+
+    lista_x1 = usunduplikaty(lista_x)
+    lista_y1 = usunduplikaty(lista_y)
+    if porownaj(lista_x1, lista_y1):
+        similarnum += 1
 
     # 4.4
     if int(x) == -5000 or int(x) == 5000 and -5000 <= int(y) <= 5000:
@@ -75,3 +82,5 @@ print('obie liczby sa pierwsze: ' + str(obieliczbypierwsze))
 print('na zewnatrz ' + str(zewnatrz))
 print('wewnatrz: ' + str(wewnatrz))
 print('krawedz: ' + str(krawedz))
+
+print("\r cyfropodobne: " + str(similarnum))
