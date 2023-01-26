@@ -1,4 +1,4 @@
-file = open("punkty.txt", 'r')
+file = open("Czerwiec 2017/punkty.txt", 'r')
 Lines = file.readlines()
 
 def isprime(number):
@@ -45,9 +45,6 @@ for line in Lines:
 
     if isprime(int(x)) and isprime(int(y)):
         obapierwsze += 1
-
-
-
 
 
 f = open('wynik4.txt', 'w')
