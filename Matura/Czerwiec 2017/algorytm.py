@@ -2,10 +2,11 @@ def isprime(num):
     if num < 2:
         return False
     i = 2
-    while i <= num:
+    while i < num:
         if num % i == 0:
             return False
-        return True
+        i += 1
+    return True
 
 
 def usunduplikaty(tab):
@@ -59,7 +60,7 @@ for line in Lines:
     lista_x.sort()
 
     lista_y = []
-    for i in x:
+    for i in y:
         lista_y.append(i)
     lista_y.sort()
 
@@ -67,6 +68,8 @@ for line in Lines:
     lista_y1 = usunduplikaty(lista_y)
     if porownaj(lista_x1, lista_y1):
         similarnum += 1
+
+    # 4.3
 
     # 4.4
     if int(x) == -5000 or int(x) == 5000 and -5000 <= int(y) <= 5000:
