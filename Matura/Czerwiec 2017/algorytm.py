@@ -7,7 +7,18 @@ def isprime(num):
             return False
         return True
 
-file = open("punkty.txt",   'r')
+
+def cyfropodobne(tab):
+    d = 0
+    while d < len(tab) - 1:
+        if tab[d] == tab[d + 1]:
+            tab.pop(d)
+        else:
+            d += 1
+    return tab
+
+
+file = open("punkty.txt", 'r')
 Lines = file.readlines()
 
 obieliczbypierwsze = 0
@@ -29,7 +40,13 @@ for line in Lines:
         obieliczbypierwsze += 1
 
     # 4.2
+    lista_x = []
+    for i in x:
+        lista_x.append(i)
+    lista_x.sort()
+    print(lista_x)
 
+    len_x = len(lista_x)
 
     # 4.4
     if int(x) == -5000 or int(x) == 5000 and -5000 <= int(y) <= 5000:
@@ -41,8 +58,8 @@ for line in Lines:
     else:
         zewnatrz += 1
 
+
 print('obie liczby sa pierwsze: ' + str(obieliczbypierwsze))
 print('na zewnatrz ' + str(zewnatrz))
 print('wewnatrz: ' + str(wewnatrz))
 print('krawedz: ' + str(krawedz))
-
