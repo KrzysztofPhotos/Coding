@@ -31,6 +31,19 @@ def porownaj(tab1, tab2):
     else:
         return False
 
+# def najdalszy():
+#     Lines2 = Lines.copy()
+#     for sline in range(len(Lines)):
+#         Lines[sline] = Lines[sline].replace('\n', '')
+#         x = Lines[sline[0]]
+#
+#         for sline2 in range(len(Lines)):
+#
+#
+#         print(Lines[sline])
+        #for el in range(len(Lines)):
+        #    print(Lines[el])
+
 
 file = open("punkty.txt", 'r')
 Lines = file.readlines()
@@ -41,11 +54,11 @@ wewnatrz = 0
 zewnatrz = 0
 similarnum = 0
 count = 0
+
 for line in Lines:
     count += 1
     tablica = line.split(" ", 1)
     tablica[1] = tablica[1].replace('\n', '').replace('r', '')
-
     x = tablica[0]
     y = tablica[1]
 
@@ -64,9 +77,7 @@ for line in Lines:
         lista_y.append(i)
     lista_y.sort()
 
-    lista_x1 = usunduplikaty(lista_x)
-    lista_y1 = usunduplikaty(lista_y)
-    if porownaj(lista_x1, lista_y1):
+    if porownaj(usunduplikaty(lista_x), usunduplikaty(lista_y)):
         similarnum += 1
 
     # 4.3
@@ -87,3 +98,5 @@ print('wewnatrz: ' + str(wewnatrz))
 print('krawedz: ' + str(krawedz))
 
 print("\r cyfropodobne: " + str(similarnum))
+
+#najdalszy()
