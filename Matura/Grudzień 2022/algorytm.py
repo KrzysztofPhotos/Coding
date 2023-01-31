@@ -46,18 +46,40 @@ file = open("Dane/mecz.txt")
 file = file.read()
 
 win = 0
+passa_A = 0
+passa_B = 0
+najlepsza_passa = 9
+najlepsza_passa_druzyna = " "
+dobre_passy = 0
 for li in range(1, 9999):
     if file[li] == file[li+1]:
-        print('brak zmian')
+        if file[li+1] == "B":
+            passa_A = 0
+            passa_B += 1
+
+            if passa_B > najlepsza_passa:
+                if passa_B > 9:
+                    dobre_passy += 1
+                najlepsza_passa = passa_B
+                najlepsza_passa_druzyna = "B"
+
+        else:
+            passa_B = 0
+            passa_A += 1
+
+            if passa_A > najlepsza_passa:
+                if passa_B > 9:
+                    dobre_passy += 1
+                najlepsza_passa = passa_A
+                najlepsza_passa_druzyna = "A"
     else:
         print("zmiana")
         win += 1
 
-    #print(file[i])
-
-
-print(win)
-
+print('najdluzsza passa')
+print(najlepsza_passa)
+print(najlepsza_passa_druzyna)
+print(dobre_passy)
 
 answer = open("wyniki1.txt", 'w')
 answer.write("1.1\n")
