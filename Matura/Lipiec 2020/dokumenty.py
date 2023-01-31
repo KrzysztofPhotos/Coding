@@ -18,8 +18,9 @@ def kontrola(identyfikator):
     var_3 = identyfikator[2]
     var_1 = wartosci[var_1]
     var_2 = wartosci[var_2]
+    print(wartosci[var_2])
     var_3 = wartosci[var_3]
-    rezultat += int(var_1) * 7 + int(var_2) * 3 + int(var_3) + int(identyfikator[4]) * 7 + int(identyfikator[5]) * 3 + int(identyfikator[6]) + int(identyfikator[7]) * 7 + int(identyfikator[8]) * 3
+    rezultat = int(var_1) * 7 + int(var_2) * 3 + int(var_3) + int(identyfikator[4]) * 7 + int(identyfikator[5]) * 3 + int(identyfikator[6]) + int(identyfikator[7]) * 7 + int(identyfikator[8]) * 3
 
     liczbadodzielenia = identyfikator[3]
 
