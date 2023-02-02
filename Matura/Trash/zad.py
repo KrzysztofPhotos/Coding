@@ -1,4 +1,4 @@
-file = open("Czerwiec 2017/punkty.txt", 'r')
+file = open("../Czerwiec 2017/punkty.txt", 'r')
 Lines = file.readlines()
 
 def isprime(number):
