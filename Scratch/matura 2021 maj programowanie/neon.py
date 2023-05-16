@@ -6,7 +6,7 @@ with open("przyklad.txt", encoding='UTF-8') as f:
 
 moj_napis = []
 for i in lines:
-
+    #print(i)
     z = i.split()
     if z[0] == "DOPISZ":
         moj_napis.append(str(z[1]))
@@ -17,18 +17,39 @@ for i in lines:
         moj_napis.append(str(z[1]))
     elif z[0] == "PRZESUN":
 
-        zmienna = len(moj_napis)-1
-        while moj_napis[zmienna] != z[1]:
-            zmienna -= 1
+        # szukamy miejsca które jest do zmiany
+        miejsce = len(moj_napis)-1
+        for m in range(len(moj_napis)):
+            od_ostatniego = len(moj_napis)-m-1
+
+            if moj_napis[od_ostatniego] == z[1]:
+                break
+            miejsce -= 1
 
         if ord(z[1])+1 > 90:
             nowa_liczba = chr(ord(z[1]) + 1 - 26)
         else:
             nowa_liczba = chr(ord(z[1])+1)
 
-        moj_napis[zmienna] = nowa_liczba
+        moj_napis[miejsce] = nowa_liczba
 
-print(moj_napis)
+
+        # index = len(moj_napis)-1
+        #
+        # while str(moj_napis[index]) != str(z[1]):
+        #     index -= 1
+        #
+        # print(index)
+        #
+        # if ord(z[1])+1 > 90:
+        #     nowa_liczba = chr(ord(z[1]) + 1 - 26)
+        # else:
+        #     nowa_liczba = chr(ord(z[1])+1)
+        #
+        # moj_napis[index] = nowa_liczba
+
+
+#print(moj_napis)
 
 # całkowita długość napisu
 napis_dlugosc = len(moj_napis)
