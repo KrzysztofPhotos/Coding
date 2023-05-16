@@ -64,6 +64,22 @@ for i in lines:
 tablica.sort()
 print(tablica)
 
+the_most = 1
+most_letter = ''
+save = 1
+for a in range(len(tablica)-1):
+    if tablica[a] == tablica[a+1]:
+        # poprzednie i nastepne są takie same
+        the_most += 2
+        if the_most > save:
+            save = the_most
+            most_letter = tablica[a]
+    else:
+        # poprzednie i następne są różne
+        the_most = 0
+
+print(most_letter)
+print(save)
 
 s = open('wynik4.txt', 'w')
 s.write("4.1 " + str(dlugosc))
