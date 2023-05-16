@@ -4,7 +4,6 @@ with open("przyklad.txt", encoding='UTF-8') as f:
     for line in f:
         lines.append(line.strip())
 
-
 moj_napis = []
 for i in lines:
 
@@ -18,8 +17,6 @@ for i in lines:
         moj_napis.append(str(z[1]))
     elif z[0] == "PRZESUN":
 
-
-
         zmienna = len(moj_napis)-1
         while moj_napis[zmienna] != z[1]:
             zmienna -= 1
@@ -29,14 +26,20 @@ for i in lines:
         else:
             nowa_liczba = chr(ord(z[1])+1)
 
-
-
         moj_napis[zmienna] = nowa_liczba
-
 
 print(moj_napis)
 
-    # 65 - A
-    # 90 - Z
+# całkowita długość napisu
+napis_dlugosc = len(moj_napis)
+
+s = open("wynik4.txt", "w")
+
+s.write("4.1 " + str(napis_dlugosc))
+
+napis = ""
+for i in moj_napis:
+    napis += i
+s.write("\n\n4.4 " + str(napis))
 
 
