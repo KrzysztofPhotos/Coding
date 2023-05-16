@@ -22,9 +22,10 @@ for i in lines:
         for m in range(len(moj_napis)):
             od_ostatniego = len(moj_napis)-m-1
 
+            miejsce -= 1
             if moj_napis[od_ostatniego] == z[1]:
                 break
-            miejsce -= 1
+            #miejsce -= 1
 
         if ord(z[1])+1 > 90:
             nowa_liczba = chr(ord(z[1]) + 1 - 26)
@@ -60,7 +61,15 @@ s.write("4.1 " + str(napis_dlugosc))
 
 napis = ""
 for i in moj_napis:
+
     napis += i
 s.write("\n\n4.4 " + str(napis))
+
+
+count = 0
+przewaga = ""
+
+for i in lines:
+    linia = i.strip()
 
 
