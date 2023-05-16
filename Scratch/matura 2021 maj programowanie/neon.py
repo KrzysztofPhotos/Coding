@@ -5,16 +5,38 @@ with open("przyklad.txt", encoding='UTF-8') as f:
         lines.append(line.strip())
 
 
-moj_napis = ""
+moj_napis = []
 for i in lines:
 
     z = i.split()
-    print(z[0])
     if z[0] == "DOPISZ":
-        print('dopisz')
+        moj_napis.append(str(z[1]))
     elif z[0] == "USUN":
-        print('kasuj to')
+        moj_napis.pop()
     elif z[0] == "ZMIEN":
-        print("zmieniaj mi to")
+        moj_napis.pop()
+        moj_napis.append(str(z[1]))
     elif z[0] == "PRZESUN":
-        print("przesuwaj to mi!")
+
+
+
+        zmienna = len(moj_napis)-1
+        while moj_napis[zmienna] != z[1]:
+            zmienna -= 1
+
+        if ord(z[1])+1 > 90:
+            nowa_liczba = chr(ord(z[1]) + 1 - 26)
+        else:
+            nowa_liczba = chr(ord(z[1])+1)
+
+
+
+        moj_napis[zmienna] = nowa_liczba
+
+
+print(moj_napis)
+
+    # 65 - A
+    # 90 - Z
+
+
