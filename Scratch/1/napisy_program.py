@@ -1,4 +1,3 @@
-
 def czy_palindrom(tekst):
     lewo = 0
     prawo = len(tekst)-1
@@ -13,7 +12,7 @@ def czy_palindrom(tekst):
 
 lines = []
 
-with open("napisy.txt", encoding='UTF-8') as f:
+with open("przyklad.txt", encoding='UTF-8') as f:
     for line in f:
         lines.append(line.strip())
 
@@ -50,7 +49,6 @@ for i in lines:
 
 s.write("\n4.3 " + str(napis) + "\n")
 
-
 haslo = ""
 for i in lines:
     # jesteśmy w 1 wierszu (linijce)
@@ -64,21 +62,21 @@ for i in lines:
         liczba = liczba[:-1]
 
     haslo += str(liczba)
-    # if int(liczba) % 2 == 1:
-    #     print(liczba)
-    #     liczba = str(liczba[:-1])
-    # print(liczba)
-print(len(haslo))
 
+do_trzech = 0
+kod_ascii = ""
 
-i = 0
+p = 0
 for i in range(int(len(haslo)/2)):
-    numper = haslo[i] + haslo[i+1]
-
-    i += 2
+    numper = haslo[p] + haslo[p+1]
+    p += 2
 
     if 65 <= int(numper) <= 90:
         # spelnia warunki
-        # print("wieksza od 65 lub mniejsza od 90")
-        # print(numper)
+        kod_ascii += str(chr(int(numper)))
+        if str(chr(int(numper))) == "X":
+            do_trzech += 1
+        if do_trzech == 3:
+            break
 
+s.write("\n" + "4.4" + str(kod_ascii))
