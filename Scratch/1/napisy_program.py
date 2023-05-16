@@ -7,15 +7,14 @@ with open("przyklad.txt", encoding='UTF-8') as f:
     #print(lines)
 
 
-numerki = ""
+numerki = 0
 for i in lines:
     for k in range(len(i)):
         if i[k].isnumeric():
-            numerki += str(i[k])
+            numerki += 1
 
-dlugosc = len(numerki)
 s = open("wynik4.txt", "w")
-s.write("4.1 " + str(dlugosc) + "\n")
+s.write("4.1 " + str(numerki) + "\n")
 
 
 odp = ""
