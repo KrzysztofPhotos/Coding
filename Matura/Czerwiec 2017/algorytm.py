@@ -62,7 +62,7 @@ for line in Lines:
     x = tablica[0]
     y = tablica[1]
 
-    # 4.1
+    # 4.matura 2021 czerwiec programowanie
     if isprime(int(x)) and isprime(int(y)):
         obieliczbypierwsze += 1
 

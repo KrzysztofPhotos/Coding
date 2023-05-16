@@ -5,7 +5,7 @@ def palindrome(x):
 
     rest = numLen % 2
     if numLen % 2 == 1:
-        # jesli liczba jest nieparzysta odejmij 1
+        # jesli liczba jest nieparzysta odejmij matura 2021 czerwiec programowanie
         numLen -= 1
 
     numlen2 = numLen / 2

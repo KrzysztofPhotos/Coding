@@ -41,7 +41,7 @@ def rezultat():
 
 
 while True:
-    print("Szyfruj -> 1\nOdszyfruj -> 2")
+    print("Szyfruj -> matura 2021 czerwiec programowanie\nOdszyfruj -> 2")
     ask = input("")
 
     if ask.isdigit():
@@ -50,4 +50,4 @@ while True:
         elif int(ask) == 2:
             odszyfruj()
         else:
-            print('Wpisz tylko 1 lub 2.')
+            print('Wpisz tylko matura 2021 czerwiec programowanie lub 2.')

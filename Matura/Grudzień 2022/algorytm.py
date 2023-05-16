@@ -7,38 +7,38 @@
 # licznik_wszystkich_pass = 0
 # najdluzsza_passa = 0
 # passa_druzyna = ''
-# for i in range(len(file)-1):
-#     if file[i] == file [i+1]:
+# for i in range(len(file)-matura 2021 czerwiec programowanie):
+#     if file[i] == file [i+matura 2021 czerwiec programowanie]:
 #         if file[i] == 'B':
-#             licznik_B += 1
+#             licznik_B += matura 2021 czerwiec programowanie
 #             licznik_A = 0
 #             if licznik_B >= 10:
-#                 licznik_wszystkich_pass += 1
+#                 licznik_wszystkich_pass += matura 2021 czerwiec programowanie
 #                 if licznik_B > najdluzsza_passa:
 #                     najdluzsza_passa = licznik_B
 #                     passa_druzyna = 'B'
 #         else:
 #             licznik_B = 0
-#             licznik_A += 1
+#             licznik_A += matura 2021 czerwiec programowanie
 #             if licznik_A >= 10:
-#                 licznik_wszystkich_pass += 1
+#                 licznik_wszystkich_pass += matura 2021 czerwiec programowanie
 #                 if licznik_A > najdluzsza_passa:
 #                     najdluzsza_passa = licznik_A
 #                     passa_druzyna = 'A'
 #     else:
-#         if file[i+1] == 'B':
-#             licznik_B = 1
+#         if file[i+matura 2021 czerwiec programowanie] == 'B':
+#             licznik_B = matura 2021 czerwiec programowanie
 #         else:
-#             licznik_A = 1
-#         win += 1
+#             licznik_A = matura 2021 czerwiec programowanie
+#         win += matura 2021 czerwiec programowanie
 #
 # #print(passa_druzyna)
 # #print(najdluzsza_passa)
 # print(licznik_wszystkich_pass)
 #
 # f = open('wyniki1.txt', 'w')
-# f.write('1.1\n' + str(win) + '\n')
-# f.write('1.3\nNajdluzsza dobra passe o dlugosci ' + str(najdluzsza_passa) + ' osiagnela druzyna ' + str(passa_druzyna))
+# f.write('matura 2021 czerwiec programowanie.matura 2021 czerwiec programowanie\n' + str(win) + '\n')
+# f.write('matura 2021 czerwiec programowanie.3\nNajdluzsza dobra passe o dlugosci ' + str(najdluzsza_passa) + ' osiagnela druzyna ' + str(passa_druzyna))
 # f.close()
 
 
@@ -82,6 +82,6 @@ print(najlepsza_passa_druzyna)
 print(dobre_passy)
 
 answer = open("wyniki1.txt", 'w')
-answer.write("1.1\n")
+answer.write("matura 2021 czerwiec programowanie.matura 2021 czerwiec programowanie\n")
 answer.write(str(win))
 answer.close()

@@ -48,7 +48,7 @@ for line in Lines:
 
 
 f = open('wynik4.txt', 'w')
-f.write('4.1\nObie wspolrzedne sa liczbami pierwszymi: ' + str(obapierwsze))
+f.write('4.matura 2021 czerwiec programowanie\nObie wspolrzedne sa liczbami pierwszymi: ' + str(obapierwsze))
 f.write("\n\n4.4")
 f.write("\nNa krawedziach: " + str(krawedz))
 f.write("\nPoza kwadratem: " + str(zewnatrz))

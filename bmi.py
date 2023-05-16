@@ -1,11 +1,11 @@
 
 # oblicz wskaźnik BMI
 # 18.5  < BMI < 24.9
-# wzór (wzrost w metrach np. 1.7):
+# wzór (wzrost w metrach np. matura 2021 czerwiec programowanie.7):
 # bmi = masa / (wzrost * wzrost)
 #
 # Oblicz BMI według powyższego wzroru dla dowolnej wagi i dowolnego wzrostu
-# np. waga: 70 kg oraz 1.75 m (175 cm) wzrostu
+# np. waga: 70 kg oraz matura 2021 czerwiec programowanie.75 m (175 cm) wzrostu
 
 height = float(input("Enter your height in meters: "))
 weight = float(input("Enter your weight in kg: "))

@@ -2,7 +2,7 @@
 mile = 0.621371192
 kilometer = 1.609344
 
-var = int(input("[Convert\n[Miles to kilometers -> 1\n[Kilometers to miles -> 2\n"))
+var = int(input("[Convert\n[Miles to kilometers -> matura 2021 czerwiec programowanie\n[Kilometers to miles -> 2\n"))
 var2 = float(input("Type here a value to convert: "))
 
 def mi_to_km():
@@ -20,5 +20,5 @@ elif var == 2:
     # km to mi
     km_to_mi()
 else:
-    print("Bad value! 1-2")
+    print("Bad value! matura 2021 czerwiec programowanie-2")
 

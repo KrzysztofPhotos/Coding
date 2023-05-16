@@ -12,7 +12,7 @@ def czy_palindrom(tekst):
 
 lines = []
 
-with open("przyklad.txt", encoding='UTF-8') as f:
+with open("napisy.txt", encoding='UTF-8') as f:
     for line in f:
         lines.append(line.strip())
 
@@ -23,7 +23,7 @@ for i in lines:
             numerki += 1
 
 s = open("wynik4.txt", "w")
-s.write("4.1 " + str(numerki) + "\n")
+s.write("4.matura 2021 czerwiec programowanie " + str(numerki) + "\n")
 
 
 odp = ""
@@ -51,7 +51,7 @@ s.write("\n4.3 " + str(napis) + "\n")
 
 haslo = ""
 for i in lines:
-    # jesteśmy w 1 wierszu (linijce)
+    # jesteśmy w matura 2021 czerwiec programowanie wierszu (linijce)
     liczba = ""
     for k in i:
         if k.isnumeric():

@@ -1,7 +1,7 @@
 
 print("Welcome in Degree Converter")
 
-ask = int(input("Tell me which value do you wanna get?\nType 1 -> convert celcius to farenheit\nType 2 -> convert farenheit to celcius\n"))
+ask = int(input("Tell me which value do you wanna get?\nType matura 2021 czerwiec programowanie -> convert celcius to farenheit\nType 2 -> convert farenheit to celcius\n"))
 val = float(input("Type here a value to convert: "))
 
 if ask == 1: # F -> C
