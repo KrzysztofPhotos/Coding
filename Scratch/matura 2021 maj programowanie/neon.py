@@ -55,9 +55,20 @@ for i in range(len(sam_poczatek_lista)-1):
         # dwa różne obok siebie zatem zeruj
         licznik = 1
 
+tablica = []
+for i in lines:
+    rozdzielone = i.split()
+    if rozdzielone[0] == "DOPISZ":
+        tablica.append(rozdzielone[1])
+
+tablica.sort()
+print(tablica)
+
 
 s = open('wynik4.txt', 'w')
 s.write("4.1 " + str(dlugosc))
 s.write("\n4.2 " + str(przewaga) + str(save))
 # s.write("\n4.3 "+ )
 s.write("\n4.4 " + str(wynik_koncowy))
+
+# od 65 do 90
