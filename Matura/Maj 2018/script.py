@@ -1,8 +1,7 @@
 lines = []
-with open('przyklad.txt', encoding='UTF-8') as f:
+with open('sygnaly.txt', encoding='UTF-8') as f:
     for line in f:
         lines.append(line.strip())
-
 
 x = 39
 slogan = ''
@@ -28,5 +27,24 @@ for i in lines:
         literki_max = literki_licz
         linijka = i
 
-print(literki_max)
-print(linijka)
+#print(literki_max)
+#print(linijka)
+
+s.write("\n\n4.2 " + linijka + " " + str(literki_max))
+
+# 4.3
+
+
+def sprawdzaj(slowo):
+    # mamy slowo (linijke)
+    for i in range(len(slowo)):
+        # przechodzimy tyle razy jak dlugi jest wyraz
+        for j in range(len(slowo)):
+            if abs(ord(slowo[i]) - ord(slowo[j])) > 10:
+                return False
+    return True
+
+s.write("\n\n4.3\n")
+for x in lines:
+    if sprawdzaj(x):
+        s.write("\n" + x)
