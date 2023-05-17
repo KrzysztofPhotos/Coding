@@ -10,5 +10,6 @@ for liczba in lines:
         if int(liczba) == int(z):
             ile += 1
 
-
+s = open("wynik4.txt","w")
+s.write("4.1 " + str(ile))
 
