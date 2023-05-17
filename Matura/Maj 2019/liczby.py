@@ -20,10 +20,8 @@ for element in lines:
     temp = []
     for cyfra in element:
         temp.append(cyfra)
-    #print(temp)
     wynik = 0
     for k in temp:
         wynik += math.factorial(int(k))
-    #print(wynik)
     if int(element) == int(wynik):
         s.write("\n" + str(element))
