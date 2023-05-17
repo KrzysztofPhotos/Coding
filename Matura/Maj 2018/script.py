@@ -1,5 +1,5 @@
 lines = []
-with open('sygnaly.txt', encoding='UTF-8') as f:
+with open('przyklad.txt', encoding='UTF-8') as f:
     for line in f:
         lines.append(line.strip())
 
@@ -13,3 +13,20 @@ for i in range(25):
 
 s = open("wynik4.txt",'w')
 s.write("4.1 " + slogan)
+
+# 4.2
+literki_max = 0
+linijka = ""
+for i in lines:
+    literki_licz = 0
+    for n in range(26):
+        if i.count(chr(int(65 + n))) > 0:
+            # dana literka sie zawiera w linijce
+            literki_licz += 1
+
+    if literki_licz > literki_max:
+        literki_max = literki_licz
+        linijka = i
+
+print(literki_max)
+print(linijka)
