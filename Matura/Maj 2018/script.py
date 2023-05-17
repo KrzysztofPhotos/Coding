@@ -27,9 +27,6 @@ for i in lines:
         literki_max = literki_licz
         linijka = i
 
-#print(literki_max)
-#print(linijka)
-
 s.write("\n\n4.2 " + linijka + " " + str(literki_max))
 
 # 4.3
@@ -43,6 +40,7 @@ def sprawdzaj(slowo):
             if abs(ord(slowo[i]) - ord(slowo[j])) > 10:
                 return False
     return True
+
 
 s.write("\n\n4.3\n")
 for x in lines:
