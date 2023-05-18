@@ -16,7 +16,7 @@ for i in lines:
         if int(i) == int(potegi[n]):
             h += 1
 
-s = open("wyniki4.txt",'w')
+s = open("wyniki4.txt", 'w')
 s.write("4.1\n" + str(h))
 
 # 4.2
@@ -33,4 +33,5 @@ s.write("\n\n4.2 \n")
 for i in takie:
     s.write(str(i) + "\n")
 
+# 4,3
 
