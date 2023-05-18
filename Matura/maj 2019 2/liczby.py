@@ -1,7 +1,7 @@
 import math
 
 lines = []
-with open("liczby.txt",encoding='UTF-8') as f:
+with open("przyklad.txt",encoding='UTF-8') as f:
     for line in f:
         lines.append(line.strip())
 
@@ -17,7 +17,7 @@ for i in lines:
             h += 1
 
 s = open("wyniki4.txt",'w')
-s.write("4.1 " + str(h))
+s.write("4.1\n" + str(h))
 
 # 4.2
 takie = []
@@ -29,7 +29,7 @@ for i in lines:
     if int(i) == int(wynik):
         takie.append(i)
 
-s.write("\n\n4.2")
+s.write("\n\n4.2 \n")
 for i in takie:
     s.write(str(i) + "\n")
 
