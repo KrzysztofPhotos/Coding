@@ -1,7 +1,7 @@
 import math
 
 lines = []
-with open("przyklad.txt",encoding='UTF-8') as f:
+with open("liczby.txt", encoding='UTF-8') as f:
     for line in f:
         lines.append(line.strip())
 
@@ -34,4 +34,14 @@ for i in takie:
     s.write(str(i) + "\n")
 
 # 4,3
+
+for i in range(len(lines)-1):
+
+    dwa = math.gcd(int(lines[i]), int(lines[i+1]))
+    x = math.gcd(dwa, int(lines[i+2]))
+    if x > 1:
+        if math.gcd(x, int(lines[i+3])) > 1:
+
+    else:
+        # od nowa liczyć trzeba zacząć
 
