@@ -24,8 +24,12 @@ def cyfropodobne(x, y):
         return True
     else:
         return False
+
+
 def policz_odleglosc(x1, y1, x2, y2):
-    return round(math.sqrt((int(x2)-int(x1))**2 + (int(y2)-int(y1))**2))
+    return round(math.sqrt((int(x2) - int(x1)) ** 2 + (int(y2) - int(y1)) ** 2))
+
+
 def polozenie_punktu(x, y):
     # srodek
     if int(x) < 5000 and int(y) < 5000:
@@ -63,7 +67,7 @@ for i in lines:
             b = rozdzielone
             odleglosc = round(policz_odleglosc(rozdzielone[0], rozdzielone[1], podgrupy[0], podgrupy[1]))
 
-    #4.4
+    # 4.4
     if polozenie_punktu(rozdzielone[0], rozdzielone[1]) == "OUT":
         zewnatrz += 1
     elif polozenie_punktu(rozdzielone[0], rozdzielone[1]) == "MID":
@@ -71,11 +75,11 @@ for i in lines:
     elif polozenie_punktu(rozdzielone[0], rozdzielone[1]) == "EDGE":
         bok += 1
 
-s = open('wyniki4.txt','w')
+s = open('wyniki4.txt', 'w')
 s.write("4.1 " + str(licznik))
 s.write("\n4.2 " + str(licznik_cyfropodobne))
 s.write("\n4.3\nA:" + str(a) + "\nB: " + str(b) + "\nOdleglosc miedzy nimi: " + str(odleglosc))
-s.write("\n4.4\n")
-s.write("Krawedz: " + str(bok))
-s.write("Wewnatrz: " + str(wewnatrz))
-s.write("Zewnatrz: " + str(zewnatrz))
+s.write("\n4.4")
+s.write("\nKrawedz: " + str(bok))
+s.write("\nWewnatrz: " + str(wewnatrz))
+s.write("\nZewnatrz: " + str(zewnatrz))

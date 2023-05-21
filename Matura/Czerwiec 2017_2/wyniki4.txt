@@ -4,3 +4,7 @@
 A:['35', '9583']
 B: ['9901', '593']
 Odleglosc miedzy nimi: 13348
+4.4
+Krawedz: 2
+Wewnatrz: 249
+Zewnatrz: 749
