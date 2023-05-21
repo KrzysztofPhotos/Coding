@@ -28,18 +28,20 @@ def policz_odleglosc(x1, y1, x2, y2):
     return round(math.sqrt((int(x2)-int(x1))**2 + (int(y2)-int(y1))**2))
 def polozenie_punktu(x, y):
     if int(x) == 5000 or int(x) == -5000 and int(y) == 5000 or int(y) == -5000:
-        return "Na bokach"
+        return 1 # bok
     elif 5000 > int(x) > -5000 and 5000 > int(y) > -5000:
-        return "Wewnatrz"
+        return 2 # wewnatrz
     else:
-        return "Na zewnatrz"
+        return 3 # zewnatrz
 
 
 licznik = 0
 licznik_cyfropodobne = 0
 a = 0
 b = 0
-
+zewnatrz = 0
+wewnatrz = 0
+bok = 0
 odleglosc = 0
 for i in lines:
     rozdzielone = i.split(" ")
@@ -60,10 +62,23 @@ for i in lines:
             b = rozdzielone
             odleglosc = round(policz_odleglosc(rozdzielone[0], rozdzielone[1], podgrupy[0], podgrupy[1]))
 
-
-
+    4.4
+    if polozenie_punktu(rozdzielone[0],rozdzielone[1]) == 3:
+        zewnatrz += 1
+    elif polozenie_punktu(rozdzielone[0],rozdzielone[1]) == 2:
+        wewnatrz += 1
+    elif polozenie_punktu(rozdzielone[0],rozdzielone[1]) == 1:
+        bok += 1
 
 s = open('wyniki4.txt','w')
 s.write("4.1 " + str(licznik))
 s.write("\n4.2 " + str(licznik_cyfropodobne))
 s.write("\n4.3\nA:" + str(a) + "\nB: " + str(b) + "\nOdleglosc miedzy nimi: " + str(odleglosc))
+s.write()
+
+print(str(bok))
+
+print(str(wewnatrz))
+
+print(str(zewnatrz))
+
