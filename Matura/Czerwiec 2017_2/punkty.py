@@ -1,10 +1,13 @@
 import sympy
+import math
+
 lines = []
 with open('punkty.txt', encoding='UTF-8') as f:
     for line in f:
         lines.append(line.strip())
 
-def cyfropodobne(x,y):
+
+def cyfropodobne(x, y):
     tablica_x = []
     tablica_y = []
     for i in range(len(str(x))):
@@ -21,20 +24,46 @@ def cyfropodobne(x,y):
         return True
     else:
         return False
+def policz_odleglosc(x1, y1, x2, y2):
+    return round(math.sqrt((int(x2)-int(x1))**2 + (int(y2)-int(y1))**2))
+def polozenie_punktu(x, y):
+    if int(x) == 5000 or int(x) == -5000 and int(y) == 5000 or int(y) == -5000:
+        return "Na bokach"
+    elif 5000 > int(x) > -5000 and 5000 > int(y) > -5000:
+        return "Wewnatrz"
+    else:
+        return "Na zewnatrz"
 
-
-cyfropodobne("22113377","32172")
 
 licznik = 0
 licznik_cyfropodobne = 0
+a = 0
+b = 0
+
+odleglosc = 0
 for i in lines:
     rozdzielone = i.split(" ")
+
+    # 4.1
     if sympy.isprime(int(rozdzielone[0])) and sympy.isprime(int(rozdzielone[1])):
         licznik += 1
 
+    # 4.2
     if cyfropodobne(rozdzielone[0],rozdzielone[1]):
         licznik_cyfropodobne += 1
+
+    # 4.3
+    for punkt in lines:
+        podgrupy = punkt.split(" ")
+        if policz_odleglosc(rozdzielone[0], rozdzielone[1], podgrupy[0], podgrupy[1]) > odleglosc:
+            a = podgrupy
+            b = rozdzielone
+            odleglosc = round(policz_odleglosc(rozdzielone[0], rozdzielone[1], podgrupy[0], podgrupy[1]))
+
+
+
 
 s = open('wyniki4.txt','w')
 s.write("4.1 " + str(licznik))
 s.write("\n4.2 " + str(licznik_cyfropodobne))
+s.write("\n4.3\nA:" + str(a) + "\nB: " + str(b) + "\nOdleglosc miedzy nimi: " + str(odleglosc))
