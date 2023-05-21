@@ -16,7 +16,7 @@ def words_dict():
 words_dict()
 
 def words_length_dict():
-    file = open('en_words.txt','r')
+    file = open('en_words.txt', 'r')
 
     # define a dict to save results
     result_dict = {}
