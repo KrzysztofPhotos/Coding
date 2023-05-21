@@ -3,4 +3,4 @@
 4.3
 A:['35', '9583']
 B: ['9901', '593']
-Odleglosc miedzy nimi: 13348he
+Odleglosc miedzy nimi: 13348

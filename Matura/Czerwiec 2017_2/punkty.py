@@ -27,12 +27,13 @@ def cyfropodobne(x, y):
 def policz_odleglosc(x1, y1, x2, y2):
     return round(math.sqrt((int(x2)-int(x1))**2 + (int(y2)-int(y1))**2))
 def polozenie_punktu(x, y):
-    if 5000 < int(x) < -5000 and 5000 < int(y) < -5000:
-        return 3  # zewnatrz
-    elif 5000 > int(x) > -5000 and 5000 > int(y) > -5000:
-        return 2 # wewnatrz
+    # srodek
+    if int(x) < 5000 and int(y) < 5000:
+        return "MID"
+    elif int(x) > 5000 or int(y) > 5000:
+        return "OUT"
     else:
-        return 1  # bok
+        return "EDGE"
 
 
 licznik = 0
@@ -51,7 +52,7 @@ for i in lines:
         licznik += 1
 
     # 4.2
-    if cyfropodobne(rozdzielone[0],rozdzielone[1]):
+    if cyfropodobne(rozdzielone[0], rozdzielone[1]):
         licznik_cyfropodobne += 1
 
     # 4.3
@@ -62,22 +63,20 @@ for i in lines:
             b = rozdzielone
             odleglosc = round(policz_odleglosc(rozdzielone[0], rozdzielone[1], podgrupy[0], podgrupy[1]))
 
-    4.4
-    if polozenie_punktu(rozdzielone[0],rozdzielone[1]) == 3:
+    #4.4
+    if polozenie_punktu(rozdzielone[0], rozdzielone[1]) == "OUT":
         zewnatrz += 1
-    elif polozenie_punktu(rozdzielone[0],rozdzielone[1]) == 2:
+    elif polozenie_punktu(rozdzielone[0], rozdzielone[1]) == "MID":
         wewnatrz += 1
-    elif polozenie_punktu(rozdzielone[0],rozdzielone[1]) == 1:
+    elif polozenie_punktu(rozdzielone[0], rozdzielone[1]) == "EDGE":
         bok += 1
 
 s = open('wyniki4.txt','w')
 s.write("4.1 " + str(licznik))
 s.write("\n4.2 " + str(licznik_cyfropodobne))
 s.write("\n4.3\nA:" + str(a) + "\nB: " + str(b) + "\nOdleglosc miedzy nimi: " + str(odleglosc))
+s.write("")
 
 print(str(bok))
-
 print(str(wewnatrz))
-
 print(str(zewnatrz))
-
