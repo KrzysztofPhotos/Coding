@@ -27,12 +27,12 @@ def cyfropodobne(x, y):
 def policz_odleglosc(x1, y1, x2, y2):
     return round(math.sqrt((int(x2)-int(x1))**2 + (int(y2)-int(y1))**2))
 def polozenie_punktu(x, y):
-    if int(x) == 5000 or int(x) == -5000 and int(y) == 5000 or int(y) == -5000:
-        return 1 # bok
+    if 5000 < int(x) < -5000 and 5000 < int(y) < -5000:
+        return 3  # zewnatrz
     elif 5000 > int(x) > -5000 and 5000 > int(y) > -5000:
         return 2 # wewnatrz
     else:
-        return 3 # zewnatrz
+        return 1  # bok
 
 
 licznik = 0
@@ -74,7 +74,6 @@ s = open('wyniki4.txt','w')
 s.write("4.1 " + str(licznik))
 s.write("\n4.2 " + str(licznik_cyfropodobne))
 s.write("\n4.3\nA:" + str(a) + "\nB: " + str(b) + "\nOdleglosc miedzy nimi: " + str(odleglosc))
-s.write()
 
 print(str(bok))
 
