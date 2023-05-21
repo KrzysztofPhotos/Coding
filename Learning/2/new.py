@@ -18,7 +18,11 @@ def words_dict():
 
         word = line_list[0]
 
-        # if i < 20:
-        #     print(word)
+        if len(word) >= MIN_CHAR_LENGTH:
+            print(word)
+
+
+        # add the word into the dict
+        dictionary[len(word)] = word
 
 words_dict()
