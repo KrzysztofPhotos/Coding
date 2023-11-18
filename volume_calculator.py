@@ -33,13 +33,13 @@
 # AREAS FUNCTIONS #
     
 def square_area(a):
-    return a*a
+    return int(a)**2
 
 def rectangle_area(a, b):
-    return a*b
+    return int(a)*int(b)
 
 def triangle_area(a, h):
-    return a*h/2
+    return int(a)*int(h)/2
 
 def circle_area(r):
     return str(float(r)**2) + "π"
@@ -75,3 +75,29 @@ def sphere_volume(r):
 
 def pyramid_volume(a, b, h):
     return a*b*h/3
+
+
+print("Welcome to the calculator!\n")
+operation = input("Please select which operation do you wanna do:\n1) Area Calculator\n2) Volume Calculator\n...")
+
+if operation == "1":
+    operation2 = input("Select what area you wanna calculate: ")
+    
+    if operation2 == "1":
+        side = input("Give the lenght of side of the square: ")
+        print("The square area of square which has side lenght " + str(side) + " is = " + str(square_area(side)))
+
+    if operation2 == "2":
+        side1 = input("Give the lenght of FIRST side of the rectangle: ")
+        side2 = input("Give the lenght of SECOND side of the rectangle: ")
+        print("The area of " + str(side1) + "x" + str(side2) + " rectangle is = " + str(rectangle_area(float(side1),float(side2))))
+
+    if operation2 == "3":
+        base = input("Give the base lenght of the triangle: ")
+        height = input('Give the height of the triangle: ')
+        print("The area of triangle which has " + str(base) + "base and " + str(height) + " height is = " + str(triangle_area(float(base), float(height))))
+
+elif operation == "2":
+    print('ch')
+else:
+    print("Error!")
