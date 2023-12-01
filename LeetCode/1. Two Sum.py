@@ -1,5 +1,5 @@
 class Solution:
-    def twoSum(self, nums, target):
+    def twoSum(nums, target):
         
         for i in range(len(nums)):
             for j in range(i+1, len(nums)):
@@ -8,4 +8,4 @@ class Solution:
                     return [i,j]
         
         
-print(Solution.twoSum(any, [2,3,4,5,6,7,10,1,2,3,5,1],11))
+print(Solution.twoSum([1,2,4,3], 5))
