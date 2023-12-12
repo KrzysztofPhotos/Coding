@@ -2,6 +2,6 @@ import pyautogui
 import time
 
 print(pyautogui.displayMousePosition())
-time.sleep(1)
+time.sleep(3)
 
 
