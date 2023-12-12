@@ -1,3 +1,5 @@
+# PIANO TITLES BOT
+
 from pyautogui import *
 import pyautogui
 import time
@@ -13,11 +15,6 @@ def click(x,y):
     
 # GAME FOR TESTING IN BROWSER
 # https://www.gamesgames.com/game/magic-piano-tiles
-    
-# Tile 1 (x,y): (630, 500)
-# Tile 2 (x,y): (481, 500)
-# Tile 3 (x,y): (327, 500)
-# Tile 4 (x,y): (189, 500)
 
 print('Bot is working')
 
