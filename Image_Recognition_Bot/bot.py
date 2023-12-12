@@ -18,26 +18,27 @@ def click(x,y):
 
 print('Bot is working')
 
+counter = [0, 0, 0, 0]
+
 while keyboard.is_pressed('q') == False:
     
     # Provide coordinates of tiles
-    counter = [0, 0, 0, 0]
+    
     while True:
         if keyboard.is_pressed('1') and counter[0] == 0:
             print('First tile has been saved')
             counter[0] = 1
             
             # Save mouse position
-            tile_1 = pyautogui.position()
+            x1, y1 = pyautogui.position()
             # if it won't be working just change above line of code to x1,y1 = pyautogui.position() and so on
             # add here a sound from AI (tile one was saved)
-            
         if keyboard.is_pressed('2') and counter[1] == 0:
             print('Second tile has been saved')
             counter[1] = 1
             
             # Save mouse position
-            tile_2 = pyautogui.position()
+            x2, y2 = pyautogui.position()
             # add here a sound from AI (tile one was saved)
             
         if keyboard.is_pressed('3') and counter[2] == 0:
@@ -45,7 +46,7 @@ while keyboard.is_pressed('q') == False:
             counter[2] = 1
             
             # Save mouse position
-            tile_3 = pyautogui.position()
+            x3, y3 = pyautogui.position()
             # add here a sound from AI (tile one was saved)
             
         if keyboard.is_pressed('4') and counter[3] == 0:
@@ -53,29 +54,31 @@ while keyboard.is_pressed('q') == False:
             counter[3] = 1
             
             # Save mouse position
-            tile_4 = pyautogui.position()
+            x4, y4 = pyautogui.position()
             # add here a sound from AI (tile one was saved)
             
         if counter == [1, 1, 1, 1]:
+            #print('ALL KEYS HAVE BEEN SAVED')
             break
         
-    print('ALL KEYS HAVE BEEN SAVED')
+    
     # add AI voice here
         
      
     # AND IF CODE WITH TILE_1 WON'T BE WORKING NEED TO CHANGE LINE BELOW TO: if pyautogui.pixel(x1, y1)[0] == 0:
-    if pyautogui.pixel(tile_1)[0] == 0:
-        click(tile_1)
+    if pyautogui.pixel(x1, y1)[0] == 0:
+        click(x1, y1)
         print('1 Tile clicked')
-    if pyautogui.pixel(tile_2)[0] == 0:
-        click(tile_2)
+    if pyautogui.pixel(x2, y1)[0] == 0:
+        click(x2, y1)
         print('2 Tile clicked')
-    if pyautogui.pixel(tile_3)[0] == 0:
-        click(tile_3)
+    if pyautogui.pixel(x3, y1)[0] == 0:
+        click(x3, y1)
         print('3 Tile clicked')
-    if pyautogui.pixel(tile_4)[0] == 0:
-        click(tile_4)
+    if pyautogui.pixel(x4, y1)[0] == 0:
+        click(x4, y1)
         print('4 Tile clicked')
     
 print('Bot has been stopped')
- 
+
+#
