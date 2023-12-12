@@ -11,25 +11,25 @@ def click(x,y):
     time.sleep(0.01)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
     
-# Tile 1 (x,y): (900, 500)
-# Tile 2 (x,y): (779, 500)
-# Tile 3 (x,y): (669, 500)
-# Tile 4 (x,y): (531, 500)
+# Tile 1 (x,y): (630, 500)
+# Tile 2 (x,y): (481, 500)
+# Tile 3 (x,y): (327, 500)
+# Tile 4 (x,y): (189, 500)
 
 print('Bot is working')
     
 while keyboard.is_pressed('q') == False:
-    if pyautogui.pixel(900,500)[0] == 0:
-        click(900,500)
+    if pyautogui.pixel(630,500)[0] == 0:
+        click(630,500)
         print('4 Tile clicked')
-    if pyautogui.pixel(779, 500)[0] == 0:
-        click(779, 500)
+    if pyautogui.pixel(481, 500)[0] == 0:
+        click(481, 500)
         print('3 Tile clicked')
-    if pyautogui.pixel(669, 500)[0] == 0:
-        click(669, 500)
+    if pyautogui.pixel(327, 500)[0] == 0:
+        click(327, 500)
         print('2 Tile clicked')
-    if pyautogui.pixel(531, 500)[0] == 0:
-        click(531, 500)
+    if pyautogui.pixel(189, 500)[0] == 0:
+        click(189, 500)
         print('1 Tile clicked')
     
 print('Bot has been stopped')
