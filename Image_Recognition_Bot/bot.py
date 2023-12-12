@@ -31,15 +31,14 @@ while keyboard.is_pressed('q') == False:
             
             # Save mouse position
             x1, y1 = pyautogui.position()
-            # if it won't be working just change above line of code to x1,y1 = pyautogui.position() and so on
-            # add here a sound from AI (tile one was saved)
+            #TODO add here a sound from AI (tile one was saved)
         if keyboard.is_pressed('2') and counter[1] == 0:
             print('Second tile has been saved')
             counter[1] = 1
             
             # Save mouse position
             x2, y2 = pyautogui.position()
-            # add here a sound from AI (tile one was saved)
+            #TODO add here a sound from AI (tile one was saved)
             
         if keyboard.is_pressed('3') and counter[2] == 0:
             print('Third tile has been saved')
@@ -47,7 +46,7 @@ while keyboard.is_pressed('q') == False:
             
             # Save mouse position
             x3, y3 = pyautogui.position()
-            # add here a sound from AI (tile one was saved)
+            #TODO add here a sound from AI (tile one was saved)
             
         if keyboard.is_pressed('4') and counter[3] == 0:
             print('Fourth tile has been saved')
@@ -55,17 +54,16 @@ while keyboard.is_pressed('q') == False:
             
             # Save mouse position
             x4, y4 = pyautogui.position()
-            # add here a sound from AI (tile one was saved)
+            #TODO add here a sound from AI (tile one was saved)
             
         if counter == [1, 1, 1, 1]:
             #print('ALL KEYS HAVE BEEN SAVED')
             break
         
     
-    # add AI voice here
+    #TODO add AI voice here
         
      
-    # AND IF CODE WITH TILE_1 WON'T BE WORKING NEED TO CHANGE LINE BELOW TO: if pyautogui.pixel(x1, y1)[0] == 0:
     if pyautogui.pixel(x1, y1)[0] == 0:
         click(x1, y1)
         print('1 Tile clicked')
@@ -81,4 +79,3 @@ while keyboard.is_pressed('q') == False:
     
 print('Bot has been stopped')
 
-#
