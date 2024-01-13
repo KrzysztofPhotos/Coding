@@ -17,27 +17,45 @@ answer = []
 for i in range(len(chosen_word)):
     answer.append("_")
     
+hearts1 = 5
 print(answer)
 
 
-guess = input("Guess a letter: ").lower()
 
-counter = 0
-for letter in chosen_word:
-    if letter == guess:
-        print("good")
-        answer[counter] = letter
-    else: 
-        print("not good")
-    counter += 1
-        
-print(chosen_word)
+def main_code():
+    hearts = hearts1
+    guess = input("Guess a letter: ").lower()
 
-print("aanswer")
-print(answer)
+    h = 0
+    counter = 0
+    for letter in chosen_word:
+        if letter == guess:
+            h = 1
+            answer[counter] = letter
+        else: 
+            print("not good")
+        counter += 1
+    
+    if h == 0:
+        hearts -= 1
+            
+    print(chosen_word)
+
+    print("\nanswer")
+    print(answer)
+    
+    if str(chosen_word) == str(answer):
+        print('CONGRAATSSS')
+        print(chosen_word)
+        print(answer)
+    
+    print("Ilosc serc: " + str(hearts))
+    
+    if hearts > 0:
+        main_code()
 
 # ***** ***** **** **** **** **** **** #
-
+main_code()
 
 # word_to_guess_str = word_list[random.randint(0, len(word_list)-1)]
 
