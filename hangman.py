@@ -9,32 +9,60 @@ word_list = ['police', 'buzzard', 'lucky', 'jackpot', 'wall', 'stronghold', 'ice
 import random
 import time
 
+# **** NEW VERSION**** #
+
+chosen_word = random.choice(word_list)
+
+answer = []
+for i in range(len(chosen_word)):
+    answer.append("_")
+    
+print(answer)
 
 
-word_to_guess_str = word_list[random.randint(0, len(word_list)-1)]
+guess = input("Guess a letter: ").lower()
 
-hearts = 5
+counter = 0
+for letter in chosen_word:
+    if letter == guess:
+        print("good")
+        answer[counter] = letter
+    else: 
+        print("not good")
+    counter += 1
+        
+print(chosen_word)
 
-word = []
-for i in word_to_guess_str:
-    word.append(i)
+print("aanswer")
+print(answer)
 
-print(word) # DEBUG TOOL
+# ***** ***** **** **** **** **** **** #
 
-print("_ " * len(word_to_guess_str))
 
-while hearts > 0:
+# word_to_guess_str = word_list[random.randint(0, len(word_list)-1)]
 
-    time.sleep(1)
-    letter_input = input("Guess a letter: ")
+# hearts = 5
 
-    for i in range(len(word)):
-        if letter_input == word[i]:
-            print("success")
+# word = []
+# for i in word_to_guess_str:
+#     word.append(i)
 
-            #now we need to print _ _ _ _ _ _ with lettters
-            # for example _ a _ a _ _ and save it to variable
-        else:
-            print("wrong letter" + " HEARTS: " + str(hearts))
-            hearts -= 1
+# print(word) # DEBUG TOOL
+
+# print("_ " * len(word_to_guess_str))
+
+# while hearts > 0:
+
+#     time.sleep(1)
+#     letter_input = input("Guess a letter: ")
+
+#     for i in range(len(word)):
+#         if letter_input == word[i]:
+#             print("success")
+
+#             #now we need to print _ _ _ _ _ _ with lettters
+#             # for example _ a _ a _ _ and save it to variable
+#         else:
+#             print("wrong letter" + " HEARTS: " + str(hearts))
+#             hearts -= 1
 
