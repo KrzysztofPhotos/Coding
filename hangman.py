@@ -1,126 +1,37 @@
-word_list = ['police', 'buzzard', 'lucky', 'jackpot', 'wall', 'stronghold', 'icebox', 'luxury', 'microwave', 'fake', 'oxygen', 'matrix']
-# add a possibility to change the category of words for instance:
-# - animals
-# - technology
-# - food
-# - other
-# - etc
 
 import random
-
+word_list = ["aardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
 
-chosen_word_tab =[]
-for letter in chosen_word:
-    chosen_word_tab.append(letter)
 
 display = []
-for i in range(len(chosen_word)):
-    display.append("_")
+word_length = len(chosen_word)
+for _ in range(word_length):
+    display += "_"
 
-print(chosen_word)
+tab_check = []
+for letter in chosen_word:
+    tab_check.append(letter)
+
 print(display)
 
-guess = input("Guess a letter: ").lower()
+counter = 0
 
-def dopisz_literki(slowo_tab_odp, litera, odpowiedz):
-    for i in range(len(slowo_tab_odp)):
-        if slowo_tab_odp[i] == litera:
-            odpowiedz[i] = litera
+while True:
+    guess = input("Guess a letter: ").lower()
 
-for letter in chosen_word:
-    if letter == guess:
-        print("Right")
-    else:
-        print("Wrong")
-        
+    for position in range(word_length):
+        letter = chosen_word[position]
+        #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
+        if letter == guess:
+            display[position] = letter
 
-
-
-
-
-
-
-
-
-
-
-
-# import random
-# import time
-
-# # **** NEW VERSION**** #
-
-# chosen_word = random.choice(word_list)
-
-# answer = []
-# for i in range(len(chosen_word)):
-#     answer.append("_")
+    print(display)
+    #print(str(display))
+    #print(tab_check)
+    counter += 1
+    if display == tab_check:
+        print('Congrats')
+        break
     
-# hearts1 = 5
-# print(answer)
-
-
-
-# def main_code():
-#     hearts = hearts1
-#     guess = input("Guess a letter: ").lower()
-
-#     h = 0
-#     counter = 0
-#     for letter in chosen_word:
-#         if letter == guess:
-#             h = 1
-#             answer[counter] = letter
-#         else: 
-#             print("not good")
-#         counter += 1
-    
-#     if h == 0:
-#         hearts -= 1
-            
-#     print(chosen_word)
-
-#     print("\nanswer")
-#     print(answer)
-    
-#     if str(chosen_word) == str(answer):
-#         print('CONGRAATSSS')
-#         print(chosen_word)
-#         print(answer)
-    
-#     print("Ilosc serc: " + str(hearts))
-    
-#     if hearts > 0:
-#         main_code()
-
-# # ***** ***** **** **** **** **** **** #
-# main_code()
-
-# # word_to_guess_str = word_list[random.randint(0, len(word_list)-1)]
-
-# # hearts = 5
-
-# # word = []
-# # for i in word_to_guess_str:
-# #     word.append(i)
-
-# # print(word) # DEBUG TOOL
-
-# # print("_ " * len(word_to_guess_str))
-
-# # while hearts > 0:
-
-# #     time.sleep(1)
-# #     letter_input = input("Guess a letter: ")
-
-# #     for i in range(len(word)):
-# #         if letter_input == word[i]:
-# #             print("success")
-
-# #             #now we need to print _ _ _ _ _ _ with lettters
-# #             # for example _ a _ a _ _ and save it to variable
-# #         else:
-# #             print("wrong letter" + " HEARTS: " + str(hearts))
-# #             hearts -= 1
-
+print("You provided " + str(counter) + " letters")
