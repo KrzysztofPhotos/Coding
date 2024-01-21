@@ -1,33 +1,44 @@
 from datetime import datetime
 import sys
 
+def write_mail(usluga, kwota, data, konto):
+    tekst = f"""
+    Dzień dobry,
+
+    Piszę w sprawie ostatniego zlecenia z programu Ogarniam ({usluga}). Niestety, byłem zmuszony skorzystać z własnej karty płatniczej, ponieważ nie było karty flotowej dostępnej w pojeździe.
+
+    W załączniku znajduje się faktura VAT za transakcję, która została wzięta na firmę Traficar. Numery rejestracyjne znajdują się na fakturze.
+
+    Proszę o zwrot poniesionych kosztów na numer konta: {konto} 
+    Kwota: {kwota} PLN
+    Data: {data}
+
+    Będę wdzięczny za potwierdzenie otrzymania tej wiadomości oraz informację o procesie zwrotu środków.
+
+    Dziękuję i pozdrawiam.
+
+    Z poważaniem,
+    Krzysztof Kwiatkowski
+    """
+    return tekst
+
 print("Mail generator")
 
-
-
-type_of_service = input("Select which type of service did you do: \n1-> Refueling\n2 -> Cleaning\n3 -> Both")
+type_of_service = int(input("Select which type of service did you do:\n1 -> Refueling\n2 -> Cleaning\n3 -> Both\n"))
 
 if type_of_service == 1:
     service = "Refueling"
-elif type_of_service == 2:
-    service = "Cleaning"
-elif type_of_service == 3:
-    service = "Refueling and cleaning"
-
-if type_of_service == 1:
     usluga = "Tankowanie"
 elif type_of_service == 2:
     usluga = "Sprzątanie"
+    service = "Cleaning"
 elif type_of_service == 3:
+    service = "Refueling and cleaning"
     usluga = "Tankowanie oraz sprzątanie"
 
-# 1 refueling
-# 2 cleaning
-# 3 both
+amount = input("\nEnter the amount: ")
 
-amount = input("Enter the amount: ")
-
-bank_acc = input("\nSelect account do refund:\n1 -> MBank (my)\n2 -> Alior Bank\n3 -> Santander (my)\n4 -> Santander (Kuba)\n5 -> Revolut")
+bank_acc = int(input("\nSelect account do refund:\n1 -> MBank (my)\n2 -> Alior Bank\n3 -> Santander (my)\n4 -> Santander (Kuba)\n5 -> Revolut\n"))
 
 if bank_acc == 1:
     acc = "MBank"
@@ -45,7 +56,7 @@ elif bank_acc == 5:
     acc = "Revolut"
     account_no = "57 2910 0006 0000 0000 0440 0146"
 
-date = input("Select day:\n1 -> Today\n2 -> Other day")
+date = int(input("\nSelect day:\n1 -> Today\n2 -> Other day\n"))
 
 if date == 1:
     unformatted_date = datetime.now()
@@ -58,15 +69,16 @@ print("Service: " + str(service))
 print("Amount: " + str(amount) + " PLN")
 print("Data: " + str(date_input))
 print("Refund to account: " + str(acc))
+print("\n\n")
+
+
 
 confirm = input("Confirm that the data is okay: Y/N")
-if confirm == "Y":
-    write_mail()
+if confirm == "Y" or confirm == "y":
+    print(write_mail(usluga, amount, date_input, account_no))
 else:
+    print("Operation stopped")
     sys.exit()
-
-# confirmation at the end all date and Y/N
-
 
 
 
