@@ -1,5 +1,6 @@
 from datetime import datetime
 import sys
+import pyperclip
 
 def write_mail(usluga, kwota, data, konto):
     tekst = f"""
@@ -20,6 +21,7 @@ def write_mail(usluga, kwota, data, konto):
     Z poważaniem,
     Krzysztof Kwiatkowski
     """
+    pyperclip.copy(tekst)
     return tekst
 
 print("Mail generator")
