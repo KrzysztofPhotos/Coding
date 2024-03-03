@@ -16,8 +16,6 @@ def write_mail(usluga, kwota, data, konto):
 
     Będę wdzięczny za potwierdzenie otrzymania tej wiadomości oraz informację o procesie zwrotu środków.
 
-    Dziękuję i pozdrawiam.
-
     Z poważaniem,
     Krzysztof Kwiatkowski
     """
