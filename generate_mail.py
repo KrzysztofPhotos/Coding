@@ -26,63 +26,35 @@ def write_mail(usluga, kwota, data, konto):
 
 print("Mail generator")
 
-type_of_service = int(input("Select which type of service did you do:\n1 -> Refueling\n2 -> Cleaning\n3 -> Both\n"))
+services = {1: "Tankowanie", 2: "Sprzątanie", 3: "Tankowanie oraz sprzątanie"}
+accounts = {
+    1: ("MBank", "89 1140 2004 0000 3102 7793 1648"),
+    2: ("Alior Bank", "56 2490 0005 0000 4000 0438 5955"),
+    3: ("Santander (my)", "55 1090 2053 0000 0001 5593 7297"),
+    4: ("Santander (Kuba)", "50 1090 2053 0000 0001 5603 1671"),
+    5: ("Revolut", "57 2910 0006 0000 0000 0440 0146")
+}
 
-if type_of_service == 1:
-    service = "Refueling"
-    usluga = "Tankowanie"
-elif type_of_service == 2:
-    usluga = "Sprzątanie"
-    service = "Cleaning"
-elif type_of_service == 3:
-    service = "Refueling and cleaning"
-    usluga = "Tankowanie oraz sprzątanie"
+type_of_service = int(input("Select which type of service did you do:\n1 -> Refueling\n2 -> Cleaning\n3 -> Both\n"))
+usluga = services.get(type_of_service, "Nieokreślona usługa")
 
 amount = input("\nEnter the amount: ")
 
 bank_acc = int(input("\nSelect account do refund:\n1 -> MBank (my)\n2 -> Alior Bank\n3 -> Santander (my)\n4 -> Santander (Kuba)\n5 -> Revolut\n"))
+acc, account_no = accounts.get(bank_acc, ("Nieokreślone konto", "Nieokreślony numer"))
 
-if bank_acc == 1:
-    acc = "MBank"
-    account_no = "89 1140 2004 0000 3102 7793 1648"
-elif bank_acc == 2:
-    acc = "Alior Bank"
-    account_no = "56 2490 0005 0000 4000 0438 5955"
-elif bank_acc == 3:
-    acc = "Santander (my)"
-    account_no = "55 1090 2053 0000 0001 5593 7297"
-elif bank_acc == 4:
-    acc = "Santander (Kuba)"
-    account_no = "50 1090 2053 0000 0001 5603 1671"
-elif bank_acc == 5:
-    acc = "Revolut"
-    account_no = "57 2910 0006 0000 0000 0440 0146"
-
-date = int(input("\nSelect day:\n1 -> Today\n2 -> Other day\n"))
-
-if date == 1:
-    unformatted_date = datetime.now()
-    date_input = unformatted_date.strftime('%d.%m.%Y')
-elif date == 2:
-    date_input = input("Enter a date in a format DD.MM.YY: ")
+date_selection = int(input("\nSelect day:\n1 -> Today\n2 -> Other day\n"))
+date_input = datetime.now().strftime('%d.%m.%Y') if date_selection == 1 else input("Enter a date in a format DD.MM.YY: ")
 
 print("\nConfirm provided data: ")
-print("Service: " + str(service))
-print("Amount: " + str(amount) + " PLN")
-print("Data: " + str(date_input))
-print("Refund to account: " + str(acc))
-print("\n\n")
+print(f"Service: {usluga}")
+print(f"Amount: {amount} PLN")
+print(f"Data: {date_input}")
+print(f"Refund to account: {acc}")
 
-
-
-confirm = input("Confirm that the data is okay: Y/N")
-if confirm == "Y" or confirm == "y":
+confirm = input("\nConfirm that the data is okay: Y/N ")
+if confirm.lower() == "y":
     print(write_mail(usluga, amount, date_input, account_no))
 else:
     print("Operation stopped")
     sys.exit()
-
-
-
-
-
