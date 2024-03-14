@@ -49,3 +49,21 @@ company1 = Company("Cisco", "502876485", "contact@cisco.com")
 company1.print_label()
 
 
+
+class Book:
+    def __init__(self, title, author, release_date, availability):
+        self.title = title
+        self.author = author
+        self.release_date = release_date
+        self.availability = availability
+    def __str__(self):
+        return f"Title: {self.title}, Author: {self.author}, Release Date: {self.release_date}, Availability: {self.availability}"
+
+
+# class Library:
+#     def __init__(self) -> None:
+#         pass
+#     def add()
+
+book1 = Book("Example Book", "John Author", "2022-01-01", True)
+print(book1)
