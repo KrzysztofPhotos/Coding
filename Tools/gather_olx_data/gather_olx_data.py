@@ -4,7 +4,6 @@
 # 3. RUN SCRIPT
 
 import os
-<<<<<<< HEAD
 
 os.system('cls') # clear console
 
@@ -14,8 +13,6 @@ os.chdir(script_dir)  # Change the working directory to that folder
 #print(f"Current working directory: {os.getcwd()}")  # Verify the change
 # the code above only ensure that we're working in the right catalog
 
-=======
->>>>>>> b545a522b530516876f3a3cc480158489ec91e40
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
