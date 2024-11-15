@@ -4,15 +4,6 @@
 # 3. RUN SCRIPT
 
 import os
-
-os.system('cls') # clear console
-
-# Change the current working directory to the directory where the script is located
-script_dir = os.path.dirname(os.path.abspath(__file__))  # Get the directory of the script
-os.chdir(script_dir)  # Change the working directory to that folder
-#print(f"Current working directory: {os.getcwd()}")  # Verify the change
-# the code above only ensure that we're working in the right catalog
-
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -20,6 +11,13 @@ from tqdm import tqdm  # Import tqdm for progress bar
 from openpyxl import load_workbook
 from openpyxl.styles import NamedStyle
 from openpyxl.utils.dataframe import dataframe_to_rows
+from datetime import datetime, timedelta
+
+os.system('cls')  # clear console
+
+# Change the current working directory to the directory where the script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))  # Get the directory of the script
+os.chdir(script_dir)  # Change the working directory to that folder
 
 # Define the Excel file name
 excel_file = "scraped_data.xlsx"
@@ -34,7 +32,6 @@ def read_links_from_txt(file_name):
     links = set()  # Use a set to avoid duplicates
     try:
         with open(file_name, "r", encoding="utf-8") as file:
-            # Read all lines, strip whitespace, and add to the set
             links = set(line.strip() for line in file.readlines() if line.strip())  # Skip empty lines and whitespace
     except FileNotFoundError:
         print(f"Error: The file '{file_name}' was not found.")
@@ -96,13 +93,9 @@ for url in tqdm(urls, desc="Processing URLs", unit="url"):
     
     # Extract the description from div class "css-1o924a9"
     description_div = soup.find("div", class_="css-1o924a9")
-    
     if description_div:
-        # Replace <br> tags with newlines
         for br in description_div.find_all("br"):
             br.replace_with("\n")
-        
-        # Get the text from the description div
         description_text = description_div.get_text("\n", strip=True)
     else:
         description_text = "Description not found."
@@ -111,19 +104,26 @@ for url in tqdm(urls, desc="Processing URLs", unit="url"):
     date_element = soup.find("span", class_="css-19yf5ek")
     if date_element:
         date_text = date_element.get_text(strip=True)
-        # Split the date and month, and convert the month name to a number
-        date_parts = date_text.split(" ")
-        if len(date_parts) == 3:
-            day = date_parts[0]
-            month = date_parts[1]
-            year = date_parts[2]
-            if month in months:
-                month_number = months[month]
-                date_converted = f"{day}.{month_number}.{year}"
-            else:
-                date_converted = "Invalid month"
+        if "dzisiaj" in date_text.lower():  # Handle "dzisiaj"
+            today = datetime.now()
+            date_converted = today.strftime("%d.%m.%Y")
+        elif "wczoraj" in date_text.lower():  # Handle "wczoraj"
+            yesterday = datetime.now() - timedelta(days=1)
+            date_converted = yesterday.strftime("%d.%m.%Y")
         else:
-            date_converted = "Date format error"
+            # Split the date and month, and convert the month name to a number
+            date_parts = date_text.split(" ")
+            if len(date_parts) == 3:
+                day = date_parts[0]
+                month = date_parts[1]
+                year = date_parts[2]
+                if month in months:
+                    month_number = months[month]
+                    date_converted = f"{day}.{month_number}.{year}"
+                else:
+                    date_converted = "Invalid month"
+            else:
+                date_converted = "Date format error"
     else:
         date_converted = "Date not found"
     
